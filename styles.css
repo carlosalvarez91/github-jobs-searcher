@@ -1,0 +1,28 @@
+h5{
+    text-align: center;
+}
+.card .card-content{
+    padding-bottom: 10px !important;
+}
+.card-title{
+    margin-left: 22px !important;
+}
+.card-info {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+i{
+    cursor: pointer;
+}
+.like:hover{
+    color: #0099ff;
+}
+.dislike{
+    float:right;
+}
+.dislike:hover{
+    color:#c20034de;
+}
+.liked-cards{
+    padding: 10px !important;
+}

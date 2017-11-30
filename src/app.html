@@ -1,0 +1,53 @@
+<template>
+  <!--<h5>${message}</h5>-->
+  <div class="row">
+  <div class="container">
+  <form submit.delegate="search()">
+      <div class="input-field col s8">
+    <input type="text"class="validate" value.bind="query_description" placeholder="Description, Technology, Position...">
+  </div>
+  <div class="input-field col s2">
+    <button class="btn waves-effect waves-light" type="submit" >Search</button>
+  </div>
+  </form>
+</div>
+</div>
+<div class="row">
+  <div class="col m8 s12">
+    <div class="container">
+        <h5>Search Results:</h5>
+      <div class="card blue-grey darken-1" repeat.for="job of jobs">
+        <div class="card-content white-text">
+          <span class="card-title">${job.title}</span>
+          <div class="card-action">
+            <div class="card-info"><strong>Company: </strong>${job.company}</div>
+            <div class="card-info"><strong>Posted at: </strong>${job.created_at}</div>
+            <div class="card-info"><strong>Location: </strong>${job.location}</div>
+            <div class="card-info"><strong>Type: </strong>${job.type}</div>
+            <div class="card-indo"><a href="${job.url}">Link</a></div>
+          </div>
+          <div class="card-action">
+              <i class="material-icons like" click.trigger="like(job)">thumb_up</i>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="col m4 s12">
+    <div class="container">
+        <h5>Liked Jobs:</h5>
+        <div class="card  teal lighten-5" repeat.for="likedJob of likedJobs">
+          <div class="card-content black-text liked-cards">
+          <div class="card-title"><span>${likedJob.title}</span></div> 
+          <div class="card-action">
+          <a href="${likedJob.url}">Link</a>  
+          <i class="material-icons dislike" click.trigger="dislike(likedJob)">thumb_down</i>
+        </div>
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+</template>
